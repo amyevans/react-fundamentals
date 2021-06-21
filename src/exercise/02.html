@@ -21,6 +21,13 @@
       className: 'sams-food',
       children: [liA, liB],
     })
-    ReactDOM.render(ul, rootElement)
+    const p = React.createElement('p', {
+      children: 'Here\'s Sam\'s favorite food:',
+    })
+    const container = React.createElement('div', {
+      className: 'container',
+      children: [p, ul],
+    })
+    ReactDOM.render(container, rootElement)
   </script>
 </body>
