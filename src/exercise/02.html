@@ -9,9 +9,18 @@
 
   <script type="module">
     const rootElement = document.getElementById('root')
-    const elementProps = {className: 'container', children: 'Hello World'}
-    const elementType = 'div'
-    const reactElement = React.createElement(elementType, elementProps)
-    ReactDOM.render(reactElement, rootElement)
+    const liA = React.createElement('li', {
+      key: 'a',
+      children: 'Green eggs',
+    })
+    const liB = React.createElement('li', {
+      key: 'b',
+      children: 'Ham',
+    })
+    const ul = React.createElement('ul', {
+      className: 'sams-food',
+      children: [liA, liB],
+    })
+    ReactDOM.render(ul, rootElement)
   </script>
 </body>
