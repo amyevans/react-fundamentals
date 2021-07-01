@@ -10,9 +10,14 @@ const operations = {
 }
 
 // 🦺 create a type called CalculatorProps
+type CalculatorProps = {
+  left: number,
+  right: number,
+  operator: string,
+};
 
 // 🦺 set the type for this props argument to CalculatorProps
-function Calculator({left, operator, right}) {
+function Calculator({left, operator, right}: CalculatorProps) {
   const result = operations[operator](left, right)
   return (
     <div>
