@@ -13,7 +13,7 @@ const operations = {
 type CalculatorProps = {
   left: number,
   right: number,
-  operator: string,
+  operator: '+' | '-' | '*' | '/',
 };
 
 // 🦺 set the type for this props argument to CalculatorProps
