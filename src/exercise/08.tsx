@@ -41,14 +41,15 @@ function App() {
         add item
       </button>
       <ul style={{listStyle: 'none', paddingLeft: 0}}>
-        {/* 🐨 use items.map to convert the item objects to React elements */}
-        {/* 💰 Here's what the UI should look like for each item:
-          - <li>
-            - <button> with onClick that calls `removeItem` with the item
-            - <label> with the contents of `item.value` and a globally unique htmlFor
-            - <input> with an id that matches the htmlFor and a defaultValue set to item.value
-          💰 You can set the `id` and `htmlFor` to `${item.id}-input` to make it globally unique
-         */}
+        {items.map((item) => (
+          <li>
+            <button onClick={() => removeItem(item)}>
+              Remove Item
+            </button>
+            <label htmlFor={`${item.id}-input`}>{item.value}</label>
+            <input id={`${item.id}-input`} defaultValue={item.value} />
+          </li>
+        ))}
       </ul>
     </div>
   )
