@@ -16,11 +16,13 @@ function UsernameForm({
     onSubmitUsername(formElements.usernameInput.value)
   };
 
+  const inputEl = React.useRef<HTMLInputElement>(null);
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInput">Username:</label>
-        <input type="text" id="usernameInput" />
+        <input type="text" id="usernameInput" ref={inputEl} />
       </div>
       <button type="submit">Submit</button>
     </form>

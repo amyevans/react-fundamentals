@@ -3,16 +3,22 @@
 
 import * as React from 'react'
 
+interface FormElements extends HTMLFormControlsCollection {
+  usernameInput: HTMLInputElement
+}
+
+interface UsernameFormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
 function UsernameForm({
   onSubmitUsername,
 }: {
   onSubmitUsername: (username: string) => void
 }) {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<UsernameFormElement>) => {
     event.preventDefault();
-    const formElements = event.currentTarget.elements as typeof event.currentTarget.elements & {
-      usernameInput: HTMLInputElement
-    }
+    const formElements = event.currentTarget.elements;
     onSubmitUsername(formElements.usernameInput.value)
   };
 

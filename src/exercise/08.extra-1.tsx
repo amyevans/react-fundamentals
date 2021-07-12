@@ -42,7 +42,7 @@ function App() {
       </button>
       <ul style={{listStyle: 'none', paddingLeft: 0}}>
         {items.map((item) => (
-          <li>
+          <li key={item.id}>
             <button onClick={() => removeItem(item)}>
               Remove Item
             </button>
